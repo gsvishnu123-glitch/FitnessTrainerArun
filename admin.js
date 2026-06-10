@@ -197,3 +197,19 @@ function renderClientContentAdmin(){
 }
 
 renderMediaLibraryAdmin();
+
+function loadSectionToEdit(){
+  const key=document.getElementById("sectionKey").value;
+  const all=JSON.parse(localStorage.getItem("sectionContent")) || {};
+  const data=all[key] || {};
+  document.getElementById("sectionTitle").value=data.title || "";
+  document.getElementById("sectionText").value=data.text || "";
+}
+
+setTimeout(()=>{
+  const sectionKey=document.getElementById("sectionKey");
+  if(sectionKey){
+    sectionKey.addEventListener("change",loadSectionToEdit);
+    loadSectionToEdit();
+  }
+},500);

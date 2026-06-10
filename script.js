@@ -102,3 +102,38 @@ function applySavedTheme(){
 }
 
 applySavedTheme();
+
+function applySectionContent(){
+  const all = JSON.parse(localStorage.getItem("sectionContent")) || {};
+
+  if(all.home){
+    const h = document.querySelector(".hero h2");
+    const p = document.querySelector(".hero-text");
+    if(h) h.innerHTML = all.home.title;
+    if(p) p.innerText = all.home.text;
+  }
+
+  if(all.about){
+    const aboutTitle = document.querySelector("#about h2");
+    const aboutText = document.querySelector("#about p:nth-of-type(2)");
+    if(aboutTitle) aboutTitle.innerText = all.about.title;
+    if(aboutText) aboutText.innerText = all.about.text;
+  }
+
+  if(all.programs){
+    const t = document.querySelector("#programs h2");
+    if(t) t.innerText = all.programs.title;
+  }
+
+  if(all.plans){
+    const t = document.querySelector("#plans h2");
+    if(t) t.innerText = all.plans.title;
+  }
+
+  if(all.contact){
+    const t = document.querySelector("#contact h2");
+    if(t) t.innerText = all.contact.title;
+  }
+}
+
+applySectionContent();
