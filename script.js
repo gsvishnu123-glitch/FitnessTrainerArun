@@ -94,3 +94,11 @@ loadDynamicProfile();
 loadCarousel();
 loadPlans();
 enableMenuThemes();
+
+function applySavedTheme(){
+  const theme=localStorage.getItem("siteTheme") || "theme-ignite";
+  document.body.classList.remove("theme-ignite","theme-elite","theme-aqua","theme-nature","theme-power");
+  document.body.classList.add(theme);
+}
+
+applySavedTheme();

@@ -74,3 +74,17 @@ function savePlan(){
   localStorage.setItem("plans",JSON.stringify(plans));
   alert("Plan added locally");
 }
+
+function saveTheme(theme){
+  localStorage.setItem("siteTheme", theme);
+  document.getElementById("currentTheme").innerText = "Current theme: " + theme.replace("theme-","").toUpperCase();
+  alert("Theme saved. Open website to view.");
+}
+
+function loadCurrentTheme(){
+  const theme=localStorage.getItem("siteTheme") || "theme-ignite";
+  const el=document.getElementById("currentTheme");
+  if(el) el.innerText = "Current theme: " + theme.replace("theme-","").toUpperCase();
+}
+
+loadCurrentTheme();

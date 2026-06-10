@@ -21,6 +21,20 @@
   <p>This is demo admin now. Later we will connect Oracle Cloud backend.</p>
 
   <div class="admin-grid">
+
+    <div class="admin-box">
+      <h3>Change Website Theme</h3>
+      <p>Choose any theme. It will apply on the website in one click.</p>
+      <div class="theme-buttons">
+        <button class="theme-btn theme-ignite-btn" onclick="saveTheme('theme-ignite')">Ignite Fitness</button>
+        <button class="theme-btn theme-elite-btn" onclick="saveTheme('theme-elite')">Elite Gold</button>
+        <button class="theme-btn theme-aqua-btn" onclick="saveTheme('theme-aqua')">Aqua Energy</button>
+        <button class="theme-btn theme-nature-btn" onclick="saveTheme('theme-nature')">Nature Diet</button>
+        <button class="theme-btn theme-power-btn" onclick="saveTheme('theme-power')">Power Purple</button>
+      </div>
+      <div id="currentTheme" class="current-theme-note">Current theme: Loading...</div>
+    </div>
+
     <div class="admin-box">
       <h3>Edit Trainer Profile</h3>
       <input id="trainerName" placeholder="Trainer Name">
