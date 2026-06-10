@@ -213,3 +213,70 @@ setTimeout(()=>{
     loadSectionToEdit();
   }
 },500);
+
+function deleteClientByName(name){
+  let clients=JSON.parse(localStorage.getItem("clients")) || [];
+  clients=clients.filter(c=>String(c.name).toLowerCase()!==String(name).toLowerCase());
+  localStorage.setItem("clients",JSON.stringify(clients));
+
+  const assigned=JSON.parse(localStorage.getItem("clientAssignments")) || {};
+  delete assigned[name];
+  localStorage.setItem("clientAssignments",JSON.stringify(assigned));
+
+  renderClientContentAdmin();
+  alert("Client deleted");
+}
+
+function removeAssignedContent(client,id){
+  const assigned=JSON.parse(localStorage.getItem("clientAssignments")) || {};
+  assigned[client]=(assigned[client] || []).filter(x=>String(x)!==String(id));
+  localStorage.setItem("clientAssignments",JSON.stringify(assigned));
+  renderClientContentAdmin();
+}
+
+function renderClientContentAdmin(){
+  const assigned=JSON.parse(localStorage.getItem("clientAssignments")) || {};
+  const media=JSON.parse(localStorage.getItem("mediaLibrary")) || [];
+  const clients=JSON.parse(localStorage.getItem("clients")) || [];
+  const box=document.getElementById("clientContentList");
+  if(!box) return;
+
+  box.innerHTML="";
+
+  clients.forEach(c=>{
+    box.innerHTML += `
+      <div class="mini-item">
+        <b>${c.name}</b><br>
+        <small>${c.plan}</small><br>
+        <button onclick="deleteClientByName('${c.name}')">Delete Client</button>
+      </div>`;
+  });
+
+  Object.keys(assigned).forEach(client=>{
+    box.innerHTML += `<h4>${client} Assigned Content</h4>`;
+    assigned[client].forEach(id=>{
+      const m=media.find(x=>String(x.id)===String(id));
+      if(m){
+        box.innerHTML += `
+          <div class="mini-item">
+            ✓ ${m.title} <small>(${m.category})</small><br>
+            <button onclick="removeAssignedContent('${client}','${id}')">Remove Assignment</button>
+          </div>`;
+      }
+    });
+  });
+
+  if(!box.innerHTML) box.innerHTML="<p>No clients or assignments yet.</p>";
+}
+
+function clearAllDemoData(){
+  if(!confirm("This will clear local demo clients, media, plans, carousel and section edits from this browser. Continue?")) return;
+  localStorage.removeItem("clients");
+  localStorage.removeItem("clientAssignments");
+  localStorage.removeItem("mediaLibrary");
+  localStorage.removeItem("plans");
+  localStorage.removeItem("carousel");
+  localStorage.removeItem("sectionContent");
+  alert("Demo data cleared");
+  location.reload();
+}
