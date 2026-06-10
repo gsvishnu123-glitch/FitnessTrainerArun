@@ -977,3 +977,135 @@ body[class*="theme-"] .topbar .brand p{
     font-size:25px !important;
   }
 }
+
+/* SAFE THEME BEAUTIFICATION - does not affect header brand */
+
+body.theme-ignite{
+  background:radial-gradient(circle at 10% 10%,rgba(255,61,0,.16),transparent 28%),
+             radial-gradient(circle at 90% 20%,rgba(255,193,7,.18),transparent 25%),
+             #fffaf2 !important;
+}
+
+body.theme-elite{
+  background:radial-gradient(circle at 10% 10%,rgba(212,175,55,.18),transparent 28%),
+             radial-gradient(circle at 90% 20%,rgba(17,24,39,.10),transparent 25%),
+             #fffdf7 !important;
+}
+
+body.theme-aqua{
+  background:radial-gradient(circle at 10% 10%,rgba(0,180,216,.16),transparent 28%),
+             radial-gradient(circle at 90% 20%,rgba(0,119,182,.12),transparent 25%),
+             #f0fbff !important;
+}
+
+body.theme-nature{
+  background:radial-gradient(circle at 10% 10%,rgba(22,163,74,.16),transparent 28%),
+             radial-gradient(circle at 90% 20%,rgba(132,204,22,.15),transparent 25%),
+             #f7fff4 !important;
+}
+
+body.theme-power{
+  background:radial-gradient(circle at 10% 10%,rgba(124,58,237,.15),transparent 28%),
+             radial-gradient(circle at 90% 20%,rgba(239,35,60,.14),transparent 25%),
+             #fff7fb !important;
+}
+
+/* Hero per theme */
+body.theme-ignite .hero{
+  background:
+    linear-gradient(100deg,rgba(255,255,255,.98),rgba(255,244,232,.88),rgba(255,255,255,.10)),
+    url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1900&q=100') 78% center/cover no-repeat !important;
+}
+
+body.theme-elite .hero{
+  background:
+    linear-gradient(100deg,rgba(255,255,255,.98),rgba(255,250,235,.88),rgba(255,255,255,.10)),
+    url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1900&q=100') 78% center/cover no-repeat !important;
+}
+
+body.theme-aqua .hero{
+  background:
+    linear-gradient(100deg,rgba(255,255,255,.98),rgba(224,247,250,.88),rgba(255,255,255,.10)),
+    url('https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1900&q=100') 78% center/cover no-repeat !important;
+}
+
+body.theme-nature .hero{
+  background:
+    linear-gradient(100deg,rgba(255,255,255,.98),rgba(236,252,203,.88),rgba(255,255,255,.10)),
+    url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1900&q=100') 78% center/cover no-repeat !important;
+}
+
+body.theme-power .hero{
+  background:
+    linear-gradient(100deg,rgba(255,255,255,.98),rgba(253,242,248,.88),rgba(255,255,255,.10)),
+    url('https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1900&q=100') 78% center/cover no-repeat !important;
+}
+
+/* Theme colours without touching logo text */
+body.theme-ignite{
+  --main:#ff3d00; --second:#ff9800; --third:#ffc107;
+}
+body.theme-elite{
+  --main:#d4af37; --second:#111827; --third:#fff7d6;
+}
+body.theme-aqua{
+  --main:#00b4d8; --second:#0077b6; --third:#caf0f8;
+}
+body.theme-nature{
+  --main:#16a34a; --second:#84cc16; --third:#ecfccb;
+}
+body.theme-power{
+  --main:#7c3aed; --second:#ef233c; --third:#fdf2f8;
+}
+
+body[class*="theme-"] .hero h2 span{
+  background:linear-gradient(135deg,var(--main),var(--second)) !important;
+  -webkit-background-clip:text !important;
+  background-clip:text !important;
+  color:transparent !important;
+}
+
+body[class*="theme-"] .primary-btn,
+body[class*="theme-"] .book-btn,
+body[class*="theme-"] button:not(.theme-btn){
+  background:linear-gradient(135deg,var(--main),var(--second)) !important;
+}
+
+body[class*="theme-"] .section-tag,
+body[class*="theme-"] .eyebrow{
+  color:var(--main) !important;
+}
+
+body[class*="theme-"] .gold-line,
+body[class*="theme-"] .card h3:before,
+body[class*="theme-"] .stats-bar div:after{
+  background:linear-gradient(90deg,var(--main),var(--second),var(--third)) !important;
+}
+
+body[class*="theme-"] .stats-bar b{
+  color:var(--main) !important;
+}
+
+body[class*="theme-"] .card{
+  border:1px solid rgba(255,255,255,.65) !important;
+  box-shadow:0 25px 70px rgba(15,23,42,.13) !important;
+}
+
+/* Menu active theme colour */
+body[class*="theme-"] .menu a.active,
+body[class*="theme-"] .menu a:hover{
+  background:linear-gradient(135deg,rgba(255,255,255,.75),var(--third)) !important;
+}
+
+/* Keep brand text protected forever */
+.topbar .brand-title span,
+.topbar .brand-title .brand-fit,
+.topbar .brand-title .brand-trainer,
+.topbar .brand-title .brand-arun{
+  -webkit-text-fill-color:initial !important;
+  background:none !important;
+}
+
+.topbar .brand-title .brand-fit{color:#111827 !important;}
+.topbar .brand-title .brand-trainer{color:#ff7a18 !important;}
+.topbar .brand-title .brand-arun{color:#111827 !important;}
