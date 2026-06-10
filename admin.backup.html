@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FitnessTrainerArun Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-page">
+
+<section class="admin-login" id="loginBox">
+  <h1>Admin Login</h1>
+  <p>Manage profile, photos, videos, plans and client content.</p>
+  <input id="adminUser" placeholder="Username" value="admin">
+  <input id="adminPass" type="password" placeholder="Password" value="admin123">
+  <button onclick="adminLogin()">Login</button>
+  <small>Demo login: admin / admin123</small>
+</section>
+
+<section class="admin-dashboard" id="adminDashboard" style="display:none">
+  <h1>FitnessTrainerArun Admin Panel</h1>
+  <p>This is demo admin now. Later we will connect Oracle Cloud backend.</p>
+
+  <div class="admin-grid">
+
+    <div class="admin-box">
+      <h3>Change Website Theme</h3>
+      <p>Choose any theme. It will apply on the website in one click.</p>
+      <div class="theme-buttons">
+        <button class="theme-btn theme-ignite-btn" onclick="saveTheme('theme-ignite')">Ignite Fitness</button>
+        <button class="theme-btn theme-elite-btn" onclick="saveTheme('theme-elite')">Elite Gold</button>
+        <button class="theme-btn theme-aqua-btn" onclick="saveTheme('theme-aqua')">Aqua Energy</button>
+        <button class="theme-btn theme-nature-btn" onclick="saveTheme('theme-nature')">Nature Diet</button>
+        <button class="theme-btn theme-power-btn" onclick="saveTheme('theme-power')">Power Purple</button>
+      </div>
+      <div id="currentTheme" class="current-theme-note">Current theme: Loading...</div>
+    </div>
+
+    <div class="admin-box">
+      <h3>Edit Trainer Profile</h3>
+      <input id="trainerName" placeholder="Trainer Name">
+      <input id="trainerPhone" placeholder="Phone">
+      <input id="trainerEmail" placeholder="Email">
+      <textarea id="trainerAddress" placeholder="Address"></textarea>
+      <button onclick="saveProfile()">Save Profile</button>
+    </div>
+
+    <div class="admin-box">
+      <h3>Upload Logo / Header Photo</h3>
+      <input type="file" id="brandImage" accept="image/*">
+      <button onclick="saveBrandImage()">Save Brand Image</button>
+    </div>
+
+    <div class="admin-box">
+      <h3>Add Carousel Photo / Video</h3>
+      <input type="file" id="carouselFile" accept="image/*,video/*">
+      <button onclick="saveCarousel()">Add to Carousel</button>
+    </div>
+
+    <div class="admin-box">
+      <h3>Create Client Account</h3>
+      <input id="clientName" placeholder="Client Name">
+      <input id="clientPlan" placeholder="Plan: Silver / Gold / Platinum">
+      <textarea id="clientContent" placeholder="Personalized diet/workout/class notes"></textarea>
+      <button onclick="saveClient()">Create Client</button>
+    </div>
+
+    <div class="admin-box">
+      <h3>Add Subscription Plan</h3>
+      <input id="planName" placeholder="Plan Name">
+      <input id="planPrice" placeholder="Price">
+      <textarea id="planDetails" placeholder="Plan details"></textarea>
+      <button onclick="savePlan()">Add Plan</button>
+    </div>
+  </div>
+
+  <br>
+  <a class="primary-btn" href="index.html">Back to Website</a>
+</section>
+
+<script src="admin.js"></script>
+</body>
+</html>
+
+<section class="admin-dashboard content-manager">
+  <h1>Advanced Content Manager</h1>
+
+  <div class="admin-grid">
+
+    <div class="admin-box">
+      <h3>Edit Website Menu / Sections</h3>
+      <select id="sectionKey">
+        <option value="home">Home Banner</option>
+        <option value="about">About Arun</option>
+        <option value="programs">Programs</option>
+        <option value="plans">Plans</option>
+        <option value="contact">Contact</option>
+      </select>
+      <input id="sectionTitle" placeholder="Section title">
+      <textarea id="sectionText" placeholder="Section content"></textarea>
+      <button onclick="saveSectionContent()">Save Section Content</button>
+    </div>
+
+    <div class="admin-box">
+      <h3>Upload Media Library</h3>
+      <input id="mediaTitle" placeholder="Media title">
+      <select id="mediaCategory">
+        <option value="Workout Video">Workout Video</option>
+        <option value="Diet Video">Diet Video</option>
+        <option value="Class Session">Class Session</option>
+        <option value="Diet PDF">Diet PDF</option>
+        <option value="Workout PDF">Workout PDF</option>
+        <option value="Photo">Photo</option>
+      </select>
+      <input type="file" id="libraryFile" accept="image/*,video/*,.pdf">
+      <button onclick="saveLibraryMedia()">Upload to Library</button>
+    </div>
+
+    <div class="admin-box">
+      <h3>Assign Content to Client</h3>
+      <input id="assignClientName" placeholder="Client name">
+      <select id="assignMediaSelect"></select>
+      <button onclick="assignContentToClient()">Assign Content</button>
+    </div>
+
+    <div class="admin-box">
+      <h3>Media Library</h3>
+      <div id="mediaLibraryList"></div>
+    </div>
+
+    <div class="admin-box">
+      <h3>Client Content List</h3>
+      <div id="clientContentList"></div>
+    </div>
+
+  </div>
+</section>
