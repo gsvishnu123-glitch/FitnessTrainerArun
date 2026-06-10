@@ -480,3 +480,156 @@ body{
     flex-direction:column;
   }
 }
+
+/* ===== Stronger Vibrant Front Page Upgrade ===== */
+
+body{
+  background:
+    radial-gradient(circle at 5% 8%,rgba(255,61,0,.18),transparent 25%),
+    radial-gradient(circle at 95% 12%,rgba(0,200,255,.16),transparent 24%),
+    radial-gradient(circle at 50% 95%,rgba(255,193,7,.16),transparent 30%),
+    #fff !important;
+}
+
+.hero{
+  background:
+    linear-gradient(100deg,rgba(255,255,255,.98) 0%,rgba(255,246,235,.93) 31%,rgba(255,255,255,.48) 52%,rgba(255,255,255,.05) 70%),
+    radial-gradient(circle at 20% 20%,rgba(255,87,34,.28),transparent 28%),
+    url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1900&q=100') 78% center/cover no-repeat !important;
+}
+
+.hero h2 span{
+  background:linear-gradient(135deg,#ff3d00,#ff9800,#ffc107) !important;
+  -webkit-background-clip:text !important;
+  background-clip:text !important;
+}
+
+.eyebrow{
+  background:linear-gradient(135deg,rgba(255,61,0,.16),rgba(255,193,7,.22)) !important;
+  color:#c2410c !important;
+  border-color:rgba(255,61,0,.25) !important;
+}
+
+.primary-btn,
+.book-btn{
+  background:linear-gradient(135deg,#ff3d00,#ff9800,#ffc107) !important;
+  color:#111827 !important;
+}
+
+.gold-line{
+  background:linear-gradient(90deg,#ff3d00,#ff9800,#ffc107,transparent) !important;
+}
+
+.stats-bar{
+  background:
+    linear-gradient(135deg,#070814,#1e1305 45%,#3b1205) !important;
+}
+
+.stats-bar b{
+  color:#ffc107 !important;
+}
+
+.stats-bar div:after{
+  background:linear-gradient(90deg,#ff3d00,#ff9800,#ffc107) !important;
+}
+
+/* Add image feel to program cards */
+#programs .card:nth-child(1){
+  background:
+    linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.95)),
+    url('https://images.unsplash.com/photo-1571019613914-85f342c6a11e?auto=format&fit=crop&w=800&q=90') center/cover !important;
+}
+
+#programs .card:nth-child(2){
+  background:
+    linear-gradient(rgba(255,255,255,.86),rgba(255,255,255,.95)),
+    url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=90') center/cover !important;
+}
+
+#programs .card:nth-child(3){
+  background:
+    linear-gradient(rgba(255,255,255,.86),rgba(255,255,255,.95)),
+    url('https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=90') center/cover !important;
+}
+
+/* Food / diet image cards on front page */
+#plans .card:nth-child(1){
+  background:
+    linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.96)),
+    url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=90') center/cover !important;
+}
+
+#plans .card:nth-child(2){
+  background:
+    linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.96)),
+    url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=90') center/cover !important;
+}
+
+#plans .card:nth-child(3){
+  background:
+    linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.96)),
+    url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=90') center/cover !important;
+}
+
+/* More vibrant section background */
+#programs{
+  background:
+    radial-gradient(circle at 12% 0%,rgba(255,61,0,.13),transparent 27%),
+    radial-gradient(circle at 88% 10%,rgba(255,193,7,.18),transparent 25%),
+    #ffffff !important;
+}
+
+#plans{
+  background:
+    radial-gradient(circle at 15% 10%,rgba(34,197,94,.14),transparent 28%),
+    radial-gradient(circle at 85% 5%,rgba(255,193,7,.18),transparent 26%),
+    #f7fff8 !important;
+}
+
+#subscriptions{
+  background:
+    radial-gradient(circle at 15% 10%,rgba(255,61,0,.16),transparent 28%),
+    radial-gradient(circle at 90% 10%,rgba(0,180,216,.15),transparent 28%),
+    #fffaf2 !important;
+}
+
+#gallery{
+  background:
+    radial-gradient(circle at 10% 8%,rgba(0,180,216,.16),transparent 28%),
+    radial-gradient(circle at 90% 12%,rgba(255,61,0,.13),transparent 28%),
+    #ffffff !important;
+}
+
+.card{
+  min-height:230px;
+}
+
+.card h3{
+  font-size:25px !important;
+}
+
+.card p{
+  color:#1f2937 !important;
+  font-weight:600;
+}
+
+.section-tag{
+  background:linear-gradient(135deg,#ff3d00,#ff9800,#ffc107);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent !important;
+}
+
+/* Default carousel stronger front images */
+.carousel-box{
+  background:
+    linear-gradient(135deg,rgba(255,61,0,.12),rgba(255,193,7,.16),rgba(0,180,216,.10)) !important;
+}
+
+@media(max-width:950px){
+  .hero{
+    background:
+      linear-gradient(rgba(255,255,255,.90),rgba(255,246,235,.92)),
+      url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1300&q=100') center/cover no-repeat !important;
+  }
+}
