@@ -1109,3 +1109,25 @@ body[class*="theme-"] .menu a:hover{
 .topbar .brand-title .brand-fit{color:#111827 !important;}
 .topbar .brand-title .brand-trainer{color:#ff7a18 !important;}
 .topbar .brand-title .brand-arun{color:#111827 !important;}
+
+.admin-preview-bar{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:22px 0 28px;
+  padding:16px;
+  background:linear-gradient(135deg,rgba(255,122,24,.10),rgba(0,180,216,.10));
+  border-radius:20px;
+  border:1px solid rgba(255,122,24,.18);
+}
+
+.preview-btn{
+  display:inline-block;
+  padding:13px 20px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#ff3d00,#ffc107);
+  color:#111827;
+  text-decoration:none;
+  font-weight:900;
+  box-shadow:0 12px 26px rgba(255,122,24,.18);
+}
