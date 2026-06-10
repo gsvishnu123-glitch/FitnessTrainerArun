@@ -771,3 +771,46 @@ body[class*="theme-"] .stats-bar b{
   padding:8px 14px;
   font-size:12px;
 }
+
+.admin-tabs{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
+}
+
+.admin-tabs button{
+  cursor:pointer;
+}
+
+.tab-box{
+  animation:fadeIn .25s ease;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+/* Fix brand text disappearing */
+.brand h1 span{
+  color:#ff7a18 !important;
+  background:none !important;
+  -webkit-background-clip:initial !important;
+  background-clip:initial !important;
+}
+
+/* Keep header stable on menu click */
+body.theme-programs .brand h1 span,
+body.theme-plans .brand h1 span,
+body.theme-media .brand h1 span{
+  color:#ff7a18 !important;
+  background:none !important;
+}

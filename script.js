@@ -137,3 +137,16 @@ function applySectionContent(){
 }
 
 applySectionContent();
+
+/* Fix menu click theme conflict */
+function fixMenuThemeClicks(){
+  const savedTheme = localStorage.getItem("siteTheme") || "theme-ignite";
+
+  document.querySelectorAll('a[href="#programs"],a[href="#plans"],a[href="#gallery"],a[href="#home"]').forEach(a=>{
+    a.onclick = () => {
+      document.body.className = savedTheme;
+    };
+  });
+}
+
+fixMenuThemeClicks();

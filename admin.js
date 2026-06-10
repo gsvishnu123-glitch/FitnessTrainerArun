@@ -280,3 +280,21 @@ function clearAllDemoData(){
   alert("Demo data cleared");
   location.reload();
 }
+
+function showTab(tabId){
+
+  document.querySelectorAll('.tab-box').forEach(tab=>{
+    tab.style.display='none';
+  });
+
+  const selected=document.getElementById(tabId);
+
+  if(selected){
+    selected.style.display='block';
+  }
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  showTab('profileTab');
+});
+
