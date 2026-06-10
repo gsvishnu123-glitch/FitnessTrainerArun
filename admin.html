@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FitnessTrainerArun Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-page">
+
+<section class="admin-login" id="loginBox">
+  <h1>Admin Login</h1>
+  <p>Manage profile, photos, videos, plans and client content.</p>
+  <input id="adminUser" placeholder="Username" value="admin">
+  <input id="adminPass" type="password" placeholder="Password" value="admin123">
+  <button onclick="adminLogin()">Login</button>
+  <small>Demo login: admin / admin123</small>
+</section>
+
+<section class="admin-dashboard" id="adminDashboard" style="display:none">
+  <h1>FitnessTrainerArun Admin Panel</h1>
+  <p>This is demo admin now. Later we will connect Oracle Cloud backend.</p>
+
+  <div class="admin-grid">
+    <div class="admin-box">
+      <h3>Edit Trainer Profile</h3>
+      <input id="trainerName" placeholder="Trainer Name">
+      <input id="trainerPhone" placeholder="Phone">
+      <input id="trainerEmail" placeholder="Email">
+      <textarea id="trainerAddress" placeholder="Address"></textarea>
+      <button onclick="saveProfile()">Save Profile</button>
+    </div>
+
+    <div class="admin-box">
+      <h3>Upload Logo / Header Photo</h3>
+      <input type="file" id="brandImage" accept="image/*">
+      <button onclick="saveBrandImage()">Save Brand Image</button>
+    </div>
+
+    <div class="admin-box">
+      <h3>Add Carousel Photo / Video</h3>
+      <input type="file" id="carouselFile" accept="image/*,video/*">
+      <button onclick="saveCarousel()">Add to Carousel</button>
+    </div>
+
+    <div class="admin-box">
+      <h3>Create Client Account</h3>
+      <input id="clientName" placeholder="Client Name">
+      <input id="clientPlan" placeholder="Plan: Silver / Gold / Platinum">
+      <textarea id="clientContent" placeholder="Personalized diet/workout/class notes"></textarea>
+      <button onclick="saveClient()">Create Client</button>
+    </div>
+
+    <div class="admin-box">
+      <h3>Add Subscription Plan</h3>
+      <input id="planName" placeholder="Plan Name">
+      <input id="planPrice" placeholder="Price">
+      <textarea id="planDetails" placeholder="Plan details"></textarea>
+      <button onclick="savePlan()">Add Plan</button>
+    </div>
+  </div>
+
+  <br>
+  <a class="primary-btn" href="index.html">Back to Website</a>
+</section>
+
+<script src="admin.js"></script>
+</body>
+</html>

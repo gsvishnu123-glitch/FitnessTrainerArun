@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Client Dashboard | FitnessTrainerArun</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">FA</span>
+    <div>
+      <h1>Fitness<span>Trainer</span>Arun</h1>
+      <p>Client Dashboard</p>
+    </div>
+  </div>
+  <nav class="menu">
+    <a href="index.html">Website</a>
+    <a href="client-login.html">Logout</a>
+  </nav>
+</header>
+
+<section class="section light">
+  <p class="section-tag">Welcome</p>
+  <h2 id="clientTitle">Client Dashboard</h2>
+  <div id="clientData" class="cards"></div>
+</section>
+
+<script>
+const active=localStorage.getItem("activeClient");
+const clients=JSON.parse(localStorage.getItem("clients")) || [];
+const c=clients.find(x=>x.name.toLowerCase()===String(active).toLowerCase());
+document.getElementById("clientTitle").innerText = active ? active + "'s Dashboard" : "Client Dashboard";
+document.getElementById("clientData").innerHTML = c
+? `<div class="card"><h3>${c.plan}</h3><p>${c.content}</p></div>`
+: `<div class="card"><h3>No content found</h3><p>Please ask admin to assign your workout or diet plan.</p></div>`;
+</script>
+</body>
+</html>

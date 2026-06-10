@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Client Login | FitnessTrainerArun</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-page">
+<section class="admin-login">
+  <h1>Client Login</h1>
+  <p>Access your personalized workout, diet and class content.</p>
+  <input id="clientLoginName" placeholder="Enter client name">
+  <button onclick="clientLogin()">Login</button>
+  <small>Demo: enter client name created in admin panel</small>
+</section>
+<script>
+function clientLogin(){
+  const name=document.getElementById("clientLoginName").value.trim();
+  if(!name){alert("Enter client name");return;}
+  localStorage.setItem("activeClient",name);
+  location.href="client-dashboard.html";
+}
+</script>
+</body>
+</html>
