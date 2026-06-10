@@ -80,3 +80,57 @@
 <script src="admin.js"></script>
 </body>
 </html>
+
+<section class="admin-dashboard content-manager">
+  <h1>Advanced Content Manager</h1>
+
+  <div class="admin-grid">
+
+    <div class="admin-box">
+      <h3>Edit Website Menu / Sections</h3>
+      <select id="sectionKey">
+        <option value="home">Home Banner</option>
+        <option value="about">About Arun</option>
+        <option value="programs">Programs</option>
+        <option value="plans">Plans</option>
+        <option value="contact">Contact</option>
+      </select>
+      <input id="sectionTitle" placeholder="Section title">
+      <textarea id="sectionText" placeholder="Section content"></textarea>
+      <button onclick="saveSectionContent()">Save Section Content</button>
+    </div>
+
+    <div class="admin-box">
+      <h3>Upload Media Library</h3>
+      <input id="mediaTitle" placeholder="Media title">
+      <select id="mediaCategory">
+        <option value="Workout Video">Workout Video</option>
+        <option value="Diet Video">Diet Video</option>
+        <option value="Class Session">Class Session</option>
+        <option value="Diet PDF">Diet PDF</option>
+        <option value="Workout PDF">Workout PDF</option>
+        <option value="Photo">Photo</option>
+      </select>
+      <input type="file" id="libraryFile" accept="image/*,video/*,.pdf">
+      <button onclick="saveLibraryMedia()">Upload to Library</button>
+    </div>
+
+    <div class="admin-box">
+      <h3>Assign Content to Client</h3>
+      <input id="assignClientName" placeholder="Client name">
+      <select id="assignMediaSelect"></select>
+      <button onclick="assignContentToClient()">Assign Content</button>
+    </div>
+
+    <div class="admin-box">
+      <h3>Media Library</h3>
+      <div id="mediaLibraryList"></div>
+    </div>
+
+    <div class="admin-box">
+      <h3>Client Content List</h3>
+      <div id="clientContentList"></div>
+    </div>
+
+  </div>
+</section>

@@ -753,3 +753,21 @@ body[class*="theme-"] .stats-bar b{
   border-radius:14px;
   font-weight:700;
 }
+
+.content-manager{
+  margin-top:35px;
+}
+
+.mini-item{
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  padding:12px;
+  margin:10px 0;
+}
+
+.mini-item button{
+  margin-top:8px;
+  padding:8px 14px;
+  font-size:12px;
+}

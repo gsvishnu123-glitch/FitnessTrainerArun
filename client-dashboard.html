@@ -26,14 +26,53 @@
   <div id="clientData" class="cards"></div>
 </section>
 
+<section class="section">
+  <p class="section-tag">My Assigned Content</p>
+  <h2>Workout, Diet & Class Sessions</h2>
+  <div id="assignedContent" class="cards"></div>
+</section>
+
 <script>
 const active=localStorage.getItem("activeClient");
 const clients=JSON.parse(localStorage.getItem("clients")) || [];
 const c=clients.find(x=>x.name.toLowerCase()===String(active).toLowerCase());
+
 document.getElementById("clientTitle").innerText = active ? active + "'s Dashboard" : "Client Dashboard";
+
 document.getElementById("clientData").innerHTML = c
 ? `<div class="card"><h3>${c.plan}</h3><p>${c.content}</p></div>`
-: `<div class="card"><h3>No content found</h3><p>Please ask admin to assign your workout or diet plan.</p></div>`;
+: `<div class="card"><h3>No profile found</h3><p>Please ask admin to create your client account.</p></div>`;
+
+const assignments=JSON.parse(localStorage.getItem("clientAssignments")) || {};
+const media=JSON.parse(localStorage.getItem("mediaLibrary")) || [];
+const ids=assignments[active] || [];
+const box=document.getElementById("assignedContent");
+
+if(!ids.length){
+  box.innerHTML=`<div class="card"><h3>No assigned content</h3><p>Your trainer has not assigned any videos, PDFs or class sessions yet.</p></div>`;
+}else{
+  box.innerHTML="";
+  ids.forEach(id=>{
+    const m=media.find(x=>String(x.id)===String(id));
+    if(!m) return;
+
+    let preview="";
+    if(m.type.startsWith("image")){
+      preview=`<img src="${m.data}" style="width:100%;border-radius:16px;margin-bottom:12px">`;
+    }else if(m.type.startsWith("video")){
+      preview=`<video controls src="${m.data}" style="width:100%;border-radius:16px;margin-bottom:12px"></video>`;
+    }else{
+      preview=`<a class="primary-btn" href="${m.data}" download="${m.name}">Download PDF</a>`;
+    }
+
+    box.innerHTML += `
+      <div class="card">
+        ${preview}
+        <h3>${m.title}</h3>
+        <p>${m.category}</p>
+      </div>`;
+  });
+}
 </script>
 </body>
 </html>
