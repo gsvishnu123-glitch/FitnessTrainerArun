@@ -150,3 +150,20 @@ function fixMenuThemeClicks(){
 }
 
 fixMenuThemeClicks();
+
+/* Active menu highlighter */
+function enableActiveMenu(){
+  const menuLinks=document.querySelectorAll('.menu a[href^="#"]');
+
+  menuLinks.forEach(link=>{
+    link.addEventListener('click',()=>{
+      menuLinks.forEach(x=>x.classList.remove('active'));
+      link.classList.add('active');
+
+      const savedTheme = localStorage.getItem("siteTheme") || "theme-ignite";
+      document.body.className = savedTheme;
+    });
+  });
+}
+
+enableActiveMenu();

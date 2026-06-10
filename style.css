@@ -814,3 +814,166 @@ body.theme-media .brand h1 span{
   color:#ff7a18 !important;
   background:none !important;
 }
+
+/* Final stable brand/header fix */
+.brand h1{
+  display:flex !important;
+  align-items:center !important;
+  gap:6px !important;
+  white-space:nowrap !important;
+}
+
+.brand h1 span{
+  background:none !important;
+  -webkit-background-clip:initial !important;
+  background-clip:initial !important;
+  color:inherit !important;
+}
+
+.brand-fit{
+  color:#111827 !important;
+}
+
+.brand-trainer{
+  color:#ff7a18 !important;
+}
+
+.brand-arun{
+  color:#111827 !important;
+}
+
+.menu a.active{
+  background:linear-gradient(135deg,rgba(255,122,24,.14),rgba(245,182,66,.22)) !important;
+  border-bottom:0 !important;
+}
+
+/* Emergency brand restore */
+.brand-title{
+  display:flex !important;
+  gap:0 !important;
+  align-items:center !important;
+  white-space:nowrap !important;
+  margin:0 !important;
+  font-family:Georgia,serif !important;
+  font-size:34px !important;
+  line-height:1 !important;
+}
+
+.brand-title span{
+  display:inline-block !important;
+  background:none !important;
+  -webkit-background-clip:initial !important;
+  background-clip:initial !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+.brand-title .brand-fit{
+  color:#111827 !important;
+}
+
+.brand-title .brand-trainer{
+  color:#ff7a18 !important;
+}
+
+.brand-title .brand-arun{
+  color:#111827 !important;
+}
+
+.brand p{
+  display:block !important;
+  visibility:visible !important;
+  margin-top:6px !important;
+}
+
+/* HARD HEADER RESTORE - highest priority */
+.topbar .brand,
+body .topbar .brand{
+  display:flex !important;
+  align-items:center !important;
+  gap:16px !important;
+  min-width:520px !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+.topbar .brand-text,
+body .topbar .brand-text{
+  display:block !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+.topbar .brand-title,
+body .topbar .brand-title,
+body[class*="theme-"] .topbar .brand-title{
+  display:flex !important;
+  align-items:center !important;
+  gap:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  font-family:Georgia,'Times New Roman',serif !important;
+  font-size:34px !important;
+  line-height:1 !important;
+  letter-spacing:-1px !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  color:#111827 !important;
+  background:none !important;
+}
+
+.topbar .brand-title span,
+body .topbar .brand-title span,
+body[class*="theme-"] .topbar .brand-title span,
+body.theme-ignite .topbar .brand-title span,
+body.theme-elite .topbar .brand-title span,
+body.theme-aqua .topbar .brand-title span,
+body.theme-nature .topbar .brand-title span,
+body.theme-power .topbar .brand-title span{
+  display:inline-block !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  background:none !important;
+  -webkit-background-clip:border-box !important;
+  background-clip:border-box !important;
+  -webkit-text-fill-color:initial !important;
+  text-shadow:none !important;
+}
+
+.topbar .brand-title .brand-fit,
+body[class*="theme-"] .topbar .brand-title .brand-fit{
+  color:#111827 !important;
+}
+
+.topbar .brand-title .brand-trainer,
+body[class*="theme-"] .topbar .brand-title .brand-trainer{
+  color:#ff7a18 !important;
+}
+
+.topbar .brand-title .brand-arun,
+body[class*="theme-"] .topbar .brand-title .brand-arun{
+  color:#111827 !important;
+}
+
+.topbar .brand p,
+body[class*="theme-"] .topbar .brand p{
+  display:block !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  color:#6b7280 !important;
+  margin:6px 0 0 !important;
+  letter-spacing:2px !important;
+  font-size:12px !important;
+  background:none !important;
+}
+
+@media(max-width:950px){
+  .topbar .brand,
+  body .topbar .brand{
+    min-width:0 !important;
+  }
+
+  .topbar .brand-title{
+    font-size:25px !important;
+  }
+}
