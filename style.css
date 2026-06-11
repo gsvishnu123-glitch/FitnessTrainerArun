@@ -1196,3 +1196,780 @@ body[class*="theme-"] .menu a:hover{
   }
 }
 
+
+/* Premium subscription plan rollout */
+.premium-plans{
+  background:linear-gradient(135deg,#fff7ed,#f8fafc,#fff) !important;
+}
+
+.premium-plans h2 span{
+  color:#ff5a00;
+}
+
+.pricing-cards{
+  align-items:stretch;
+}
+
+.price-card{
+  position:relative;
+  padding:34px 28px !important;
+  border-radius:28px !important;
+  background:rgba(255,255,255,.92) !important;
+  border:1px solid rgba(255,122,24,.18) !important;
+  box-shadow:0 24px 70px rgba(15,23,42,.10) !important;
+  overflow:hidden;
+}
+
+.price-card:before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:6px;
+  background:linear-gradient(90deg,#ff3d00,#ff9800,#ffc107);
+}
+
+.featured-plan{
+  transform:translateY(-14px);
+  background:linear-gradient(180deg,#111827,#1f2937) !important;
+  color:#fff !important;
+  border:1px solid rgba(255,152,0,.40) !important;
+  box-shadow:0 30px 90px rgba(2,6,23,.30) !important;
+}
+
+.featured-plan h3,
+.featured-plan p,
+.featured-plan li{
+  color:#fff !important;
+}
+
+.plan-badge{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(255,90,0,.12);
+  color:#ff5a00;
+  font-weight:900;
+  font-size:12px;
+  letter-spacing:1.5px;
+  margin-bottom:18px;
+}
+
+.featured-plan .plan-badge{
+  background:linear-gradient(135deg,#ff3d00,#ff9800);
+  color:#fff;
+}
+
+.price-card ul{
+  list-style:none;
+  padding:0;
+  margin:22px 0;
+}
+
+.price-card li{
+  padding:9px 0;
+  color:#374151;
+  font-weight:700;
+}
+
+.price-card li:before{
+  content:"✓";
+  color:#ff5a00;
+  font-weight:900;
+  margin-right:10px;
+}
+
+.plan-btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:14px 22px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#ff3d00,#ff9800);
+  color:#fff;
+  text-decoration:none;
+  font-weight:900;
+  box-shadow:0 14px 32px rgba(255,90,0,.28);
+}
+
+/* One-line premium customer menu */
+.topbar{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:24px !important;
+  padding:18px 4.5% !important;
+}
+
+.brand{
+  flex:0 0 auto !important;
+}
+
+.menu{
+  flex:1 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  gap:6px !important;
+  background:#07101d !important;
+  border-radius:999px !important;
+  padding:8px !important;
+  box-shadow:0 18px 45px rgba(2,6,23,.25) !important;
+  max-width:1120px !important;
+}
+
+.menu a{
+  color:#fff !important;
+  font-weight:900 !important;
+  font-size:14px !important;
+  padding:13px 16px !important;
+  border-radius:999px !important;
+  white-space:nowrap !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:7px !important;
+}
+
+.menu a:hover,
+.menu a.active{
+  background:linear-gradient(135deg,#ff5a00,#ff9800) !important;
+  color:#fff !important;
+  box-shadow:0 10px 25px rgba(255,90,0,.35) !important;
+}
+
+.menu .book-btn{
+  margin-left:6px !important;
+  background:linear-gradient(135deg,#ff5a00,#ff9800) !important;
+  color:#fff !important;
+}
+
+/* Public professional cards */
+.cards{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:28px !important;
+}
+
+.card{
+  min-height:260px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:flex-start !important;
+}
+
+.mini-btn{
+  margin-top:auto;
+  display:inline-block;
+  width:max-content;
+  padding:12px 18px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#ff5a00,#ff9800);
+  color:#fff;
+  text-decoration:none;
+  font-weight:900;
+}
+
+/* Hide any public upload/admin blocks if old code remains */
+#admin,
+.admin-grid,
+.admin-box{
+  display:none !important;
+}
+
+/* Responsive */
+@media(max-width:1180px){
+  .topbar{
+    flex-direction:column !important;
+    align-items:flex-start !important;
+  }
+
+  .menu{
+    width:100% !important;
+    max-width:100% !important;
+    overflow-x:auto !important;
+    justify-content:flex-start !important;
+    border-radius:24px !important;
+  }
+}
+
+@media(max-width:850px){
+  .cards{
+    grid-template-columns:1fr !important;
+  }
+
+  .brand-title{
+    font-size:30px !important;
+  }
+}
+
+/* Final one-line header/menu */
+.topbar{
+  display:grid !important;
+  grid-template-columns:420px 1fr !important;
+  align-items:center !important;
+  gap:18px !important;
+  padding:16px 3.5% !important;
+}
+
+.brand-title{font-size:34px !important;}
+.logo{width:64px !important;height:64px !important;}
+
+.menu{
+  display:flex !important;
+  flex-wrap:nowrap !important;
+  justify-content:flex-end !important;
+  align-items:center !important;
+  gap:3px !important;
+  width:100% !important;
+  background:#07101d !important;
+  border-radius:999px !important;
+  padding:7px !important;
+}
+
+.menu a{
+  font-size:13px !important;
+  padding:12px 12px !important;
+  white-space:nowrap !important;
+}
+
+.menu .book-btn{
+  padding:13px 18px !important;
+  margin-left:4px !important;
+}
+
+@media(max-width:1250px){
+  .topbar{grid-template-columns:1fr !important;}
+  .menu{overflow-x:auto !important;justify-content:flex-start !important;border-radius:24px !important;}
+}
+
+/* Subscription rollout */
+.pricing-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+  margin-top:40px;
+}
+
+.price-card{
+  background:#fff;
+  border-radius:28px;
+  padding:34px;
+  box-shadow:0 25px 70px rgba(15,23,42,.12);
+  border:1px solid rgba(255,122,24,.18);
+}
+
+.featured-plan{
+  background:linear-gradient(180deg,#111827,#1f2937);
+  color:#fff;
+  transform:translateY(-12px);
+}
+
+.featured-plan p,.featured-plan li{color:#fff;}
+
+.plan-badge{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(255,90,0,.12);
+  color:#ff5a00;
+  font-weight:900;
+  letter-spacing:1px;
+  margin-bottom:16px;
+}
+
+.price-card ul{list-style:none;padding:0;margin:20px 0;}
+.price-card li{padding:8px 0;font-weight:700;}
+.price-card li:before{content:"✓";color:#ff5a00;margin-right:10px;font-weight:900;}
+
+.plan-btn,.finder-grid button{
+  display:inline-block;
+  border:none;
+  padding:14px 22px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#ff3d00,#ff9800);
+  color:#fff;
+  text-decoration:none;
+  font-weight:900;
+}
+
+.plan-finder{
+  margin-top:70px;
+  padding:34px;
+  border-radius:30px;
+  background:#fff;
+  box-shadow:0 25px 70px rgba(15,23,42,.10);
+}
+
+.finder-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:14px;
+}
+
+.finder-grid input,.finder-grid select{
+  padding:15px;
+  border-radius:14px;
+  border:1px solid #d1d5db;
+  font-weight:700;
+}
+
+.plan-result{
+  margin-top:22px;
+  padding:20px;
+  border-radius:20px;
+  background:#fff7ed;
+  font-weight:800;
+  display:none;
+}
+
+@media(max-width:900px){
+  .pricing-cards,.finder-grid{grid-template-columns:1fr;}
+  .featured-plan{transform:none;}
+}
+
+/* Final menu compact one-line fix */
+.topbar{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:18px !important;
+  padding:14px 3.2% !important;
+}
+
+.brand-title{font-size:32px !important;}
+.logo{width:62px !important;height:62px !important;}
+
+.menu{
+  flex:1 !important;
+  max-width:1060px !important;
+  display:flex !important;
+  flex-wrap:nowrap !important;
+  justify-content:flex-end !important;
+  align-items:center !important;
+  gap:3px !important;
+  padding:7px !important;
+}
+
+.menu a{
+  font-size:13px !important;
+  padding:11px 12px !important;
+  white-space:nowrap !important;
+}
+
+.menu .book-btn{
+  padding:12px 16px !important;
+}
+
+/* Plan finder first and cleaner */
+.plan-finder{
+  margin:0 auto 70px !important;
+}
+
+.finder-grid{
+  display:grid !important;
+  grid-template-columns:repeat(7,1fr) !important;
+  gap:12px !important;
+}
+
+.finder-grid input,
+.finder-grid select{
+  min-width:0 !important;
+}
+
+.finder-grid button{
+  white-space:nowrap !important;
+}
+
+.plan-result{
+  text-align:left !important;
+  line-height:1.8 !important;
+  font-size:17px !important;
+}
+
+/* Same button style for every plan */
+.plan-btn{
+  min-width:180px;
+  text-align:center;
+}
+
+/* WhatsApp support floating button */
+.whatsapp-float,
+.float-whatsapp,
+.floating-whatsapp{
+  background:#25D366 !important;
+  color:#fff !important;
+}
+
+.whatsapp-float::before,
+.float-whatsapp::before,
+.floating-whatsapp::before{
+  content:"💬";
+}
+
+.whatsapp-float::after,
+.float-whatsapp::after,
+.floating-whatsapp::after{
+  content:"Professional Support at your fingertips";
+  position:absolute;
+  right:78px;
+  top:50%;
+  transform:translateY(-50%);
+  background:#07101d;
+  color:#fff;
+  padding:12px 18px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:900;
+  white-space:nowrap;
+  box-shadow:0 14px 34px rgba(2,6,23,.25);
+}
+
+@media(max-width:1350px){
+  .topbar{
+    flex-direction:column !important;
+    align-items:flex-start !important;
+  }
+  .menu{
+    width:100% !important;
+    max-width:100% !important;
+    justify-content:flex-start !important;
+    overflow-x:auto !important;
+    border-radius:24px !important;
+  }
+}
+
+@media(max-width:1000px){
+  .finder-grid,
+  .pricing-cards{
+    grid-template-columns:1fr !important;
+  }
+}
+
+/* FINAL RESPONSIVE WIDTH + MOBILE FIX */
+html, body{
+  max-width:100%;
+  overflow-x:hidden !important;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+section,
+.topbar,
+.hero,
+.section{
+  max-width:100vw !important;
+}
+
+/* Better landing background */
+.hero{
+  background:
+    linear-gradient(100deg,rgba(255,255,255,.96),rgba(255,255,255,.78),rgba(255,255,255,.16)),
+    url("https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1800&q=80") center/cover !important;
+  min-height:760px;
+}
+
+/* Keep header inside screen */
+.topbar{
+  width:100%;
+  max-width:100%;
+  overflow:hidden;
+}
+
+.menu{
+  max-width:980px !important;
+  overflow:hidden !important;
+}
+
+.menu a{
+  font-size:12px !important;
+  padding:10px 10px !important;
+}
+
+.menu .book-btn{
+  padding:11px 14px !important;
+}
+
+/* WhatsApp floating button with label */
+.whatsapp-float,
+.float-whatsapp,
+.floating-whatsapp{
+  width:68px !important;
+  height:68px !important;
+  background:#25D366 !important;
+  color:#fff !important;
+  font-size:0 !important;
+}
+
+.whatsapp-float::before,
+.float-whatsapp::before,
+.floating-whatsapp::before{
+  content:"💬";
+  font-size:28px;
+}
+
+.whatsapp-float::after,
+.float-whatsapp::after,
+.floating-whatsapp::after{
+  content:"Chat with Arun";
+  position:absolute;
+  right:78px;
+  top:50%;
+  transform:translateY(-50%);
+  background:#07101d;
+  color:#fff;
+  padding:12px 18px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:900;
+  white-space:nowrap;
+  box-shadow:0 14px 34px rgba(2,6,23,.25);
+}
+
+/* Mobile optimization */
+@media(max-width:900px){
+  .topbar{
+    padding:14px 18px !important;
+  }
+
+  .brand{
+    width:100%;
+  }
+
+  .brand-title{
+    font-size:26px !important;
+  }
+
+  .brand-text p{
+    font-size:11px !important;
+  }
+
+  .logo{
+    width:56px !important;
+    height:56px !important;
+  }
+
+  .menu{
+    width:100% !important;
+    max-width:100% !important;
+    overflow-x:auto !important;
+    justify-content:flex-start !important;
+    border-radius:22px !important;
+  }
+
+  .menu a{
+    font-size:12px !important;
+    padding:11px 13px !important;
+  }
+
+  .hero{
+    min-height:680px;
+    padding:90px 22px 40px !important;
+  }
+
+  .hero h2{
+    font-size:46px !important;
+    line-height:1.05 !important;
+  }
+
+  .hero-text{
+    font-size:17px !important;
+  }
+
+  .stats-bar{
+    position:relative !important;
+    left:auto !important;
+    right:auto !important;
+    bottom:auto !important;
+    margin-top:28px !important;
+    display:grid !important;
+    grid-template-columns:1fr !important;
+  }
+
+  .finder-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  .pricing-cards{
+    grid-template-columns:1fr !important;
+  }
+
+  .whatsapp-float::after,
+  .float-whatsapp::after,
+  .floating-whatsapp::after{
+    display:none !important;
+  }
+}
+
+/* Move plan finder visually to top */
+.top-plan-finder{
+  padding-top:70px !important;
+  padding-bottom:50px !important;
+  background:linear-gradient(135deg,#fff7ed,#f0fdfa,#ffffff) !important;
+}
+
+.top-plan-finder .plan-finder{
+  margin:0 auto !important;
+  max-width:1600px !important;
+}
+
+/* WhatsApp floating CTA label */
+.whatsapp-float,
+.float-whatsapp,
+.floating-whatsapp,
+.whatsapp-btn,
+.wa-float{
+  width:auto !important;
+  min-width:220px !important;
+  height:62px !important;
+  border-radius:999px !important;
+  padding:0 22px !important;
+  background:#25D366 !important;
+  color:#fff !important;
+  font-size:15px !important;
+  font-weight:900 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:10px !important;
+}
+
+.whatsapp-float::before,
+.float-whatsapp::before,
+.floating-whatsapp::before,
+.whatsapp-btn::before,
+.wa-float::before{
+  content:"💬";
+  font-size:24px;
+}
+
+.whatsapp-float::after,
+.float-whatsapp::after,
+.floating-whatsapp::after,
+.whatsapp-btn::after,
+.wa-float::after{
+  content:"Chat with Arun";
+  font-size:15px;
+  font-weight:900;
+}
+
+/* Mobile compact WhatsApp */
+@media(max-width:700px){
+  .whatsapp-float,
+  .float-whatsapp,
+  .floating-whatsapp,
+  .whatsapp-btn,
+  .wa-float{
+    min-width:62px !important;
+    width:62px !important;
+    padding:0 !important;
+  }
+
+  .whatsapp-float::after,
+  .float-whatsapp::after,
+  .floating-whatsapp::after,
+  .whatsapp-btn::after,
+  .wa-float::after{
+    display:none !important;
+  }
+}
+
+/* Moving stats ticker - prevents content hiding */
+.stats-bar{
+  position:relative !important;
+  left:auto !important;
+  right:auto !important;
+  bottom:auto !important;
+  margin:34px 0 0 !important;
+  width:100% !important;
+  max-width:100% !important;
+  overflow:hidden !important;
+  display:flex !important;
+  gap:0 !important;
+  border-radius:24px !important;
+  transform:none !important;
+}
+
+.stats-bar > div{
+  min-width:360px !important;
+  flex:0 0 auto !important;
+  animation:statsMove 18s linear infinite;
+}
+
+.stats-bar:hover > div{
+  animation-play-state:paused;
+}
+
+@keyframes statsMove{
+  from{transform:translateX(0);}
+  to{transform:translateX(-100%);}
+}
+
+.hero{
+  padding-bottom:80px !important;
+}
+
+@media(max-width:800px){
+  .stats-bar{
+    margin-top:24px !important;
+    border-radius:18px !important;
+  }
+
+  .stats-bar > div{
+    min-width:280px !important;
+  }
+}
+
+/* Floating stats strip - scrolls with screen, does not hide hero content */
+.stats-bar{
+  position:fixed !important;
+  left:50% !important;
+  bottom:18px !important;
+  transform:translateX(-50%) !important;
+  z-index:80 !important;
+  width:min(92vw,1500px) !important;
+  max-width:1500px !important;
+  margin:0 !important;
+  display:grid !important;
+  grid-template-columns:repeat(4,1fr) !important;
+  overflow:hidden !important;
+  border-radius:24px !important;
+  box-shadow:0 22px 60px rgba(2,6,23,.35) !important;
+  opacity:.96 !important;
+}
+
+.stats-bar > div{
+  min-width:0 !important;
+  animation:none !important;
+  transform:none !important;
+}
+
+.hero{
+  padding-bottom:120px !important;
+}
+
+@media(max-width:900px){
+  .stats-bar{
+    grid-template-columns:repeat(2,1fr) !important;
+    width:94vw !important;
+    bottom:12px !important;
+    border-radius:18px !important;
+  }
+
+  .stats-bar > div{
+    padding:14px !important;
+  }
+
+  .stats-bar b{
+    font-size:24px !important;
+  }
+
+  .stats-bar span{
+    font-size:11px !important;
+  }
+}
+
+@media(max-width:520px){
+  .stats-bar{
+    grid-template-columns:1fr 1fr !important;
+  }
+}
