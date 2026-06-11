@@ -1131,3 +1131,68 @@ body[class*="theme-"] .menu a:hover{
   font-weight:900;
   box-shadow:0 12px 26px rgba(255,122,24,.18);
 }
+
+/* ===== PREMIUM MENU ===== */
+
+.menu{
+  background:#07101d;
+  border-radius:999px;
+  padding:8px;
+  gap:4px;
+  box-shadow:0 20px 45px rgba(2,6,23,.28);
+  border:1px solid rgba(255,255,255,.10);
+}
+
+.menu a{
+  color:#fff;
+  font-weight:800;
+  font-size:15px;
+  padding:14px 18px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.menu a span{
+  font-size:17px;
+}
+
+.menu a:hover,
+.menu a.active{
+  background:linear-gradient(135deg,#ff5a00,#ff9800);
+  color:#fff;
+  box-shadow:0 10px 25px rgba(255,90,0,.35);
+}
+
+.menu .book-btn{
+  background:linear-gradient(135deg,#ff5a00,#ff9800);
+  color:#fff;
+}
+
+.about h2{
+  color:#ffffff !important;
+  text-shadow:0 4px 20px rgba(0,0,0,.7);
+}
+
+.about p{
+  color:#f3f4f6;
+  line-height:1.9;
+}
+
+.eyebrow{
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+@media(max-width:1100px){
+  .menu{
+    overflow-x:auto;
+    flex-wrap:nowrap;
+  }
+
+  .menu a{
+    white-space:nowrap;
+  }
+}
+
