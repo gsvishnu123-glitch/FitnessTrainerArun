@@ -167,3 +167,44 @@ function enableActiveMenu(){
 }
 
 enableActiveMenu();
+
+function recommendPlan(){
+  const name=document.getElementById("pfName")?.value.trim();
+  const whatsapp=document.getElementById("pfWhatsapp")?.value.trim();
+  const weight=Number(document.getElementById("pfWeight")?.value||0);
+  const height=Number(document.getElementById("pfHeight")?.value||0);
+  const goal=document.getElementById("pfGoal")?.value;
+  const level=document.getElementById("pfLevel")?.value;
+  const box=document.getElementById("planResult");
+
+  if(!name || !whatsapp || !weight || !height || !goal || !level){
+    box.style.display="block";
+    box.innerHTML="Please enter your name, WhatsApp number, weight, height, goal and fitness level to get your recommendation.";
+    return;
+  }
+
+  let plan="Gold Transformation Coaching";
+  let timeline="12–16 weeks";
+  let target="improve strength, consistency, body composition and overall fitness";
+
+  if(goal==="fat"){plan="Gold Fat Loss Transformation";timeline="12–20 weeks";target="sustainable fat loss, better stamina and improved food discipline";}
+  if(goal==="muscle"){plan="Gold Muscle Gain Program";timeline="16–24 weeks";target="progressive strength, muscle gain and structured recovery";}
+  if(goal==="lean"){plan="Gold Lean Body Program";timeline="10–16 weeks";target="lean body shaping, strength, posture and controlled nutrition";}
+  if(goal==="fitness"){plan=level==="beginner"?"Silver Starter Fitness":"Gold General Fitness Coaching";timeline=level==="beginner"?"8–12 weeks":"10–16 weeks";target="routine building, mobility, stamina and healthy habits";}
+  if(level==="advanced"){plan="Platinum One-to-One Premium";timeline="12–24 weeks";target="advanced transformation with priority personal coaching and accountability";}
+
+  box.style.display="block";
+  box.innerHTML=`
+    <b>Hello ${name}, your recommended plan is: ${plan}</b><br>
+    <b>Target:</b> ${target}.<br>
+    <b>Approximate timeline:</b> ${timeline}.<br><br>
+    <b>How we will do it step by step:</b><br>
+    1. Review your current weight, height, fitness level and lifestyle.<br>
+    2. Understand your goal: fat loss, muscle gain, lean body or general fitness.<br>
+    3. Prepare a suitable workout and nutrition direction.<br>
+    4. Start with trial support and adjust the plan based on your response.<br>
+    5. Continue with monthly subscription, one-to-one coaching or personal training support as required.<br><br>
+    This is an initial recommendation. Final plan will be customized after WhatsApp consultation.<br><br>
+    <a class="plan-btn" href="https://wa.me/971526120096?text=Hi%20Arun,%20my%20name%20is%20${encodeURIComponent(name)}.%20My%20WhatsApp%20number%20is%20${encodeURIComponent(whatsapp)}.%20I%20want%20to%20discuss%20my%20recommended%20fitness%20plan.">Continue on WhatsApp</a>
+  `;
+}
