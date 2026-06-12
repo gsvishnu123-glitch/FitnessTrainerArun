@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Admin | FitnessTrainerArun</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="final-clean.css">
 </head>
 <body class="admin-page">
 
@@ -28,11 +29,12 @@
 
   <div class="admin-tabs">
     <button onclick="showTab('profileTab')">Profile</button>
-    <button onclick="showTab('contentTab')">Website Content</button>
+    <button onclick="showTab('contentTab'); loadContentManager()">Website Content Manager</button>
     <button onclick="showTab('mediaTab')">Media Library</button>
     <button onclick="showTab('clientTab')">Clients</button>
     <button onclick="showTab('plansTab')">Plans</button>
     <button onclick="showTab('themeTab')">Themes</button>
+    <button onclick="showTab('analyticsTab'); loadAssessmentAnalytics()">AI Assessment Leads & Visitor Analytics</button>
     <button onclick="showTab('dangerTab')">Settings</button>
   </div>
 
@@ -46,17 +48,128 @@
   </div>
 
   <div id="contentTab" class="tab-box" style="display:none">
-    <h2>Edit Website Menu / Sections</h2>
-    <select id="sectionKey">
-      <option value="home">Home Banner</option>
-      <option value="about">About Arun</option>
-      <option value="programs">Programs</option>
-      <option value="plans">Plans</option>
-      <option value="contact">Contact</option>
-    </select>
-    <input id="sectionTitle" placeholder="Section title">
-    <textarea id="sectionText" placeholder="Section content"></textarea>
-    <button onclick="saveSectionContent()">Save Section</button>
+    <h2>Website Content Manager</h2>
+    <p id="contentManagerStatus">Edit public website text, cards, media links and contact details here.</p>
+
+    <div class="content-manager-tabs">
+      <button onclick="showContentPanel('heroContent')">Hero</button>
+      <button onclick="showContentPanel('aboutContent')">About</button>
+      <button onclick="showContentPanel('plansContent')">Plans</button>
+      <button onclick="showContentPanel('programsContent')">Programs</button>
+      <button onclick="showContentPanel('transformationsContent')">Transformations</button>
+      <button onclick="showContentPanel('testimonialsContent')">Testimonials</button>
+      <button onclick="showContentPanel('trialContent')">Trial CTA</button>
+      <button onclick="showContentPanel('mediaContent')">Media</button>
+      <button onclick="showContentPanel('contactContent')">Contact</button>
+      <button onclick="showContentPanel('whatsappContent')">WhatsApp</button>
+      <button onclick="showContentPanel('aiContent')">AI Assessment Text</button>
+    </div>
+
+    <div id="heroContent" class="content-panel">
+      <h3>Hero</h3>
+      <input id="contentHeroBrandTitle" placeholder="Brand title">
+      <input id="contentHeroTagline" placeholder="Tagline">
+      <input id="contentHeroEyebrow" placeholder="Hero eyebrow text">
+      <input id="contentHeroHeading" placeholder="Hero main heading">
+      <input id="contentHeroHighlight" placeholder="Hero highlighted word / line">
+      <input id="contentHeroHeadingLine2" placeholder="Hero second line">
+      <textarea id="contentHeroDescription" placeholder="Hero description"></textarea>
+      <input id="contentHeroButtonText" placeholder="Book button text">
+      <input id="contentHeroButtonLink" placeholder="Book button link">
+      <input id="contentHeroSecondaryText" placeholder="Secondary link text">
+      <input id="contentHeroSecondaryLink" placeholder="Secondary link">
+      <input id="contentHeroBackgroundImage" placeholder="Hero background image URL or uploaded data URL">
+      <input type="file" id="contentHeroBackgroundUpload" accept="image/*">
+      <button onclick="uploadContentImage('contentHeroBackgroundUpload','contentHeroBackgroundImage')">Use Uploaded Hero Image</button>
+    </div>
+
+    <div id="aboutContent" class="content-panel" style="display:none">
+      <h3>About</h3>
+      <input id="contentAboutTag" placeholder="Section label">
+      <input id="contentAboutTitle" placeholder="About title">
+      <textarea id="contentAboutBody" placeholder="About content"></textarea>
+    </div>
+
+    <div id="plansContent" class="content-panel" style="display:none">
+      <h3>Plans</h3>
+      <input id="contentPlansTag" placeholder="Section label">
+      <input id="contentPlansTitle" placeholder="Section title">
+      <div id="plansItemsEditor"></div>
+      <button onclick="addContentItem('plans')">Add Plan</button>
+    </div>
+
+    <div id="programsContent" class="content-panel" style="display:none">
+      <h3>Programs</h3>
+      <input id="contentProgramsTag" placeholder="Section label">
+      <input id="contentProgramsTitle" placeholder="Title first part">
+      <input id="contentProgramsHighlight" placeholder="Highlighted title part">
+      <div id="programsItemsEditor"></div>
+      <button onclick="addContentItem('programs')">Add Program</button>
+    </div>
+
+    <div id="transformationsContent" class="content-panel" style="display:none">
+      <h3>Transformations</h3>
+      <input id="contentTransformationsTag" placeholder="Section label">
+      <input id="contentTransformationsTitle" placeholder="Section title">
+      <div id="transformationsItemsEditor"></div>
+      <button onclick="addContentItem('transformations')">Add Story</button>
+    </div>
+
+    <div id="testimonialsContent" class="content-panel" style="display:none">
+      <h3>Testimonials</h3>
+      <input id="contentTestimonialsTag" placeholder="Section label">
+      <input id="contentTestimonialsTitle" placeholder="Section title">
+      <div id="testimonialsItemsEditor"></div>
+      <button onclick="addContentItem('testimonials')">Add Testimonial</button>
+    </div>
+
+    <div id="trialContent" class="content-panel" style="display:none">
+      <h3>Trial CTA</h3>
+      <input id="contentTrialTag" placeholder="Section label">
+      <input id="contentTrialTitle" placeholder="CTA title">
+      <textarea id="contentTrialText" placeholder="CTA text"></textarea>
+      <input id="contentTrialButtonText" placeholder="Button text">
+      <input id="contentTrialButtonLink" placeholder="Button link">
+    </div>
+
+    <div id="mediaContent" class="content-panel" style="display:none">
+      <h3>Media</h3>
+      <input id="contentMediaTag" placeholder="Section label">
+      <input id="contentMediaTitle" placeholder="Section title">
+      <div id="mediaItemsEditor"></div>
+      <button onclick="addContentItem('media')">Add Media Item</button>
+    </div>
+
+    <div id="contactContent" class="content-panel" style="display:none">
+      <h3>Contact</h3>
+      <input id="contentContactTag" placeholder="Section label">
+      <input id="contentContactTitle" placeholder="Contact title">
+      <input id="contentContactName" placeholder="Trainer name">
+      <input id="contentContactRole" placeholder="Role">
+      <textarea id="contentContactAddress" placeholder="Address"></textarea>
+      <input id="contentContactEmail" placeholder="Email">
+      <input id="contentContactPhone" placeholder="Phone">
+      <input id="contentContactButtonText" placeholder="Button text">
+      <input id="contentContactButtonLink" placeholder="Button link">
+    </div>
+
+    <div id="whatsappContent" class="content-panel" style="display:none">
+      <h3>Floating WhatsApp</h3>
+      <input id="contentWhatsappText" placeholder="Floating button text">
+      <input id="contentWhatsappLink" placeholder="Floating button link">
+    </div>
+
+    <div id="aiContent" class="content-panel" style="display:none">
+      <h3>AI Assessment Text</h3>
+      <input id="contentAiTag" placeholder="Section label">
+      <input id="contentAiTitle" placeholder="Title first part">
+      <input id="contentAiHighlight" placeholder="Highlighted title part">
+      <textarea id="contentAiIntro" placeholder="Assessment intro text"></textarea>
+      <input id="contentAiButtonText" placeholder="Assessment button text">
+    </div>
+
+    <br>
+    <button onclick="saveContentManager()">Save Website Content</button>
   </div>
 
   <div id="mediaTab" class="tab-box" style="display:none">
@@ -111,6 +224,54 @@
       <button class="theme-btn theme-power-btn" onclick="saveTheme('theme-power')">Power Purple</button>
     </div>
     <div id="currentTheme" class="current-theme-note">Current theme: Loading...</div>
+  </div>
+
+  <div id="analyticsTab" class="tab-box" style="display:none">
+    <h2>AI Assessment Leads & Visitor Analytics</h2>
+    <button onclick="loadAssessmentAnalytics()">Refresh Analytics</button>
+    <p id="analyticsStatus"></p>
+    <div class="analytics-grid">
+      <div class="analytics-card"><b id="totalVisitors">0</b><span>Total visitors</span></div>
+      <div class="analytics-card"><b id="totalAssessments">0</b><span>Total AI assessments</span></div>
+      <div class="analytics-card"><b id="sharedAssessments">0</b><span>WhatsApp shared</span></div>
+      <div class="analytics-card"><b id="conversionRate">0%</b><span>Conversion</span></div>
+    </div>
+    <div class="analytics-breakdown">
+      <div>
+        <h3>Goal-wise count</h3>
+        <div id="goalStats"></div>
+      </div>
+      <div>
+        <h3>Activity-level count</h3>
+        <div id="activityStats"></div>
+      </div>
+    </div>
+    <h3>Latest leads</h3>
+    <div class="analytics-table-wrap">
+      <table class="analytics-table">
+        <thead>
+          <tr>
+            <th>Date/time</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Country/Nationality</th>
+            <th>Weight</th>
+            <th>Height</th>
+            <th>BMI/category</th>
+            <th>Goal</th>
+            <th>Level</th>
+            <th>Activity</th>
+            <th>Training days</th>
+            <th>Recommended plan</th>
+            <th>Score</th>
+            <th>Status</th>
+            <th>WhatsApp number</th>
+          </tr>
+        </thead>
+        <tbody id="latestLeads"></tbody>
+      </table>
+    </div>
   </div>
 
   <div id="dangerTab" class="tab-box" style="display:none">

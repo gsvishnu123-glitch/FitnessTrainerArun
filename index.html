@@ -21,14 +21,12 @@
   </div>
 
   <nav class="menu">
-    <a href="#home" class="active"><span>🏠</span> Home</a>
-    <a href="#programs"><span>🏋️</span> Programs</a>
-    <a href="#plans"><span>👑</span> Plans</a>
-    <a href="#gallery"><span>🎬</span> Media</a>
-    <a href="#about"><span>👤</span> About</a>
-    <a href="#contact"><span>📞</span> Contact</a>
+    <a href="#about" class="active">About</a>
+    <a href="#plans">Plans</a>
     <a href="client-login.html">Client Login</a>
-    <a href="admin.html">Admin</a>
+    <a href="#gallery">Media</a>
+    <a href="#contact">Contact</a>
+    <a href="admin.html">Admin Login</a>
     <a class="book-btn" href="https://wa.me/971526120096">Book Consultation</a>
   </nav>
 </header>
@@ -43,7 +41,7 @@
     </p>
 
     <div class="hero-actions">
-      <a class="primary-btn" href="https://wa.me/971526120096">Book Your Consultation →</a>
+      <a class="primary-btn" href="https://wa.me/971526120096">Book Your Consultation</a>
       <a class="play-btn" href="#about">▶ <span>About Arun<br><small>Certified trainer</small></span></a>
     </div>
   </div>
@@ -62,6 +60,62 @@
   </div>
 </section>
 
+<section id="assessment" class="section top-plan-finder">
+  <p class="section-tag">AI Assessment</p>
+  <h2>Personal Fitness <span>Assessment</span></h2>
+  <p class="finder-intro">Enter your current details to receive an initial fitness score, BMI, timeline and coaching recommendation.</p>
+  <div class="plan-finder">
+    <div class="finder-grid">
+      <input id="pfName" placeholder="Name">
+      <input id="pfAge" type="number" min="10" max="100" placeholder="Age">
+      <select id="pfGender">
+        <option value="">Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+      <input id="pfNationality" placeholder="Country / Nationality">
+      <input id="pfWeight" type="number" min="20" max="300" placeholder="Weight (kg)">
+      <input id="pfHeight" type="number" min="90" max="250" placeholder="Height (cm)">
+      <select id="pfActivity">
+        <option value="">Daily activity level</option>
+        <option>Sedentary</option>
+        <option>Low activity</option>
+        <option>Moderate activity</option>
+        <option>High activity</option>
+        <option>Very active</option>
+      </select>
+      <select id="pfDays">
+        <option value="">Training days/week</option>
+        <option value="0">0 days</option>
+        <option value="1">1 day</option>
+        <option value="2">2 days</option>
+        <option value="3">3 days</option>
+        <option value="4">4 days</option>
+        <option value="5">5 days</option>
+        <option value="6">6 days</option>
+        <option value="7">7 days</option>
+      </select>
+      <select id="pfGoal">
+        <option value="">Goal</option>
+        <option value="fat">Fat loss</option>
+        <option value="muscle">Muscle gain</option>
+        <option value="lean">Lean body</option>
+        <option value="fitness">General fitness</option>
+      </select>
+      <select id="pfLevel">
+        <option value="">Fitness level</option>
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="advanced">Advanced</option>
+      </select>
+      <input id="pfMedical" placeholder="Injury / medical concern">
+      <button onclick="startFitnessAssessment()">Start AI Fitness Assessment</button>
+    </div>
+    <div id="planResult" class="plan-result"></div>
+  </div>
+</section>
+
 
 <section class="stats-section">
 
@@ -71,7 +125,7 @@
 <section id="programs" class="section">
   <p class="section-tag">Our Programs</p>
   <h2>Training Programs <span>Designed for You</span></h2>
-  <div class="cards">
+  <div id="programList" class="cards">
     <div class="card"><h3>Personal Training</h3><p>One-to-one coaching with customized workout schedules.</p></div>
     <div class="card"><h3>Body Transformation</h3><p>Fat loss, strength, muscle gain and complete body shaping.</p></div>
     <div class="card"><h3>Diet Consulting</h3><p>Practical food plans based on your fitness goal and lifestyle.</p></div>
@@ -94,38 +148,6 @@ My focus is not only on achieving short-term results, but on building long-term 
 </section>
 
 <section id="plans" class="section light">
-  <p class="section-tag">Plans</p>
-  <h2>Workout & Diet Support</h2>
-  <div id="workoutList" class="cards"></div>
-</section>
-
-<section id="gallery" class="section">
-  <p class="section-tag">Media</p>
-  <h2>Gallery & Updates</h2>
-  <div id="galleryList" class="gallery"></div>
-</section>
-
-<section id="admin" class="section light">
-  <p class="section-tag">Admin</p>
-  <h2>Upload Content</h2>
-  <div class="admin-grid">
-    <div class="admin-box">
-      <h3>Add Workout Plan</h3>
-      <input id="workoutTitle" placeholder="Workout title">
-      <textarea id="workoutDesc" placeholder="Workout details"></textarea>
-      <button onclick="addWorkout()">Add Workout</button>
-    </div>
-    <div class="admin-box">
-      <h3>Upload Photo / Video</h3>
-      <input type="file" id="mediaFile" accept="image/*,video/*">
-      <button onclick="uploadMedia()">Upload</button>
-      <p>Saved locally in this browser for now.</p>
-    </div>
-  </div>
-</section>
-
-
-<section id="subscriptions" class="section light">
   <p class="section-tag">Membership</p>
   <h2>Subscription Plans</h2>
   <div id="plansList" class="cards">
@@ -135,10 +157,29 @@ My focus is not only on achieving short-term results, but on building long-term 
   </div>
 </section>
 
-<section id="carouselSection" class="section">
-  <p class="section-tag">Highlights</p>
-  <h2>Photo & Video Carousel</h2>
-  <div id="carouselBox" class="carousel-box"></div>
+<section id="transformations" class="section">
+  <p class="section-tag">Transformations</p>
+  <h2>Client Progress Stories</h2>
+  <div id="transformationList" class="cards"></div>
+</section>
+
+<section id="testimonials" class="section light">
+  <p class="section-tag">Testimonials</p>
+  <h2>What Clients Say</h2>
+  <div id="testimonialList" class="cards"></div>
+</section>
+
+<section id="trial" class="trial-cta">
+  <p class="section-tag">Start Today</p>
+  <h2>Ready for a guided fitness plan?</h2>
+  <p>Book a consultation with Arun and choose the right training direction for your goal, schedule and fitness level.</p>
+  <a class="primary-btn" href="https://wa.me/971526120096">Book Trial Consultation</a>
+</section>
+
+<section id="gallery" class="section">
+  <p class="section-tag">Media</p>
+  <h2>Gallery & Updates</h2>
+  <div id="galleryList" class="gallery"></div>
 </section>
 
 <section id="contact" class="contact">
